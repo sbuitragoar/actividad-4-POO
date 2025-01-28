@@ -1,10 +1,10 @@
 class Cuenta:
     def __init__(self, saldo: float, tasa_anual: float):
         self._saldo = saldo
-        self._num_consignaciones = 0  # Número de consignaciones realizadas
-        self._num_retiros = 0  # Número de retiros realizados
-        self._tasa_anual = tasa_anual  # Tasa anual de intereses
-        self._comision_mensual = 0.0  # Comisión mensual de la cuenta
+        self._num_consignaciones = 0  
+        self._num_retiros = 0  
+        self._tasa_anual = tasa_anual  
+        self._comision_mensual = 0.0  
 
     def consignar(self, cantidad: float):
         if cantidad > 0:
@@ -31,7 +31,7 @@ class Cuenta:
 class CuentaAhorros(Cuenta):
     def __init__(self, saldo: float, tasa_anual: float):
         super().__init__(saldo, tasa_anual)
-        self._activa = saldo >= 10000  # Activa si el saldo es mayor o igual a 10000
+        self._activa = saldo >= 10000 
 
     def retirar(self, cantidad: float):
         if self._activa:

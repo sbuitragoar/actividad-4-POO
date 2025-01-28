@@ -15,6 +15,7 @@ class Inmueble:
         print(f"Área = {self.área}")
         print(f"Dirección = {self.dirección}")
         print(f"Precio de venta = ${self.precio_venta}")
+        
 class InmuebleVivienda(Inmueble):
 
     def __init__(self, identificador_inmobiliario, área, dirección, número_habitaciones, número_baños):
@@ -81,9 +82,8 @@ class ApartamentoFamiliar(Apartamento):
 
 class Apartaestudio(Apartamento):
     valor_area = 1500000  
-
+    
     def __init__(self, identificador_inmobiliario, área, dirección, número_habitaciones, número_baños):
-        # Los apartaestudios tienen una sola habitación y un solo baño
         super().__init__(identificador_inmobiliario, área, dirección, 1, 1)
 
     def imprimir(self):
@@ -95,7 +95,6 @@ class CasaConjuntoCerrado(CasaUrbana):
 
     def __init__(self, identificador_inmobiliario, área, dirección, número_habitaciones, número_baños,
                  número_pisos, valor_administración, tiene_piscina, tiene_campos_deportivos):
-        # Invoca al constructor de la clase padre
         super().__init__(identificador_inmobiliario, área, dirección, número_habitaciones, número_baños, número_pisos)
         self.valor_administración = valor_administración
         self.tiene_piscina = tiene_piscina
@@ -112,7 +111,6 @@ class CasaIndependiente(CasaUrbana):
     valor_area = 3000000
 
     def __init__(self, identificador_inmobiliario, área, dirección, número_habitaciones, número_baños, número_pisos):
-        # Invoca al constructor de la clase padre
         super().__init__(identificador_inmobiliario, área, dirección, número_habitaciones, número_baños, número_pisos)
 
     def imprimir(self):

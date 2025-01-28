@@ -4,7 +4,7 @@ class Inmueble:
         self.identificador_inmobiliario = identificador_inmobiliario
         self.área = área
         self.dirección = dirección
-        self.precio_venta = 0.0  # Inicializamos el precio de venta a 0
+        self.precio_venta = 0.0 
 
     def calcular_precio_venta(self, valor_area):
         self.precio_venta = self.área * valor_area
@@ -46,8 +46,7 @@ class Apartamento(InmuebleVivienda):
         super().imprimir()
         
 class CasaRural(Casa):
-    valor_area = 1500000  # Valor por área para una casa rural
-
+    valor_area = 1500000  
     def __init__(self, identificador_inmobiliario, área, dirección, número_habitaciones, número_baños, número_pisos, distancia_cabecera, altitud):
         super().__init__(identificador_inmobiliario, área, dirección, número_habitaciones, número_baños, número_pisos)
         self.distancia_cabecera = distancia_cabecera
@@ -69,7 +68,7 @@ class CasaUrbana(Casa):
         super().imprimir()
         
 class ApartamentoFamiliar(Apartamento):
-    valor_area = 2000000  # Valor por área para un apartamento familiar
+    valor_area = 2000000 
 
     def __init__(self, identificador_inmobiliario, área, dirección, número_habitaciones, número_baños, valor_administración):
         super().__init__(identificador_inmobiliario, área, dirección, número_habitaciones, número_baños)
@@ -81,7 +80,7 @@ class ApartamentoFamiliar(Apartamento):
         print()
 
 class Apartaestudio(Apartamento):
-    valor_area = 1500000  # Valor por área para un apartaestudio
+    valor_area = 1500000  
 
     def __init__(self, identificador_inmobiliario, área, dirección, número_habitaciones, número_baños):
         # Los apartaestudios tienen una sola habitación y un solo baño
@@ -92,7 +91,7 @@ class Apartaestudio(Apartamento):
         print()
 
 class CasaConjuntoCerrado(CasaUrbana):
-    valor_area = 2500000  # Valor por área para una casa en conjunto cerrado
+    valor_area = 2500000  
 
     def __init__(self, identificador_inmobiliario, área, dirección, número_habitaciones, número_baños,
                  número_pisos, valor_administración, tiene_piscina, tiene_campos_deportivos):
@@ -110,7 +109,7 @@ class CasaConjuntoCerrado(CasaUrbana):
         print()
 
 class CasaIndependiente(CasaUrbana):
-    valor_area = 3000000  # Valor por área para una casa independiente
+    valor_area = 3000000
 
     def __init__(self, identificador_inmobiliario, área, dirección, número_habitaciones, número_baños, número_pisos):
         # Invoca al constructor de la clase padre
@@ -121,13 +120,11 @@ class CasaIndependiente(CasaUrbana):
         print()
 
 class Local(Inmueble):
-    # Tipo de inmueble especificado como un valor enumerado
     class Tipo:
         INTERNO = "INTERNO"
         CALLE = "CALLE"
 
     def __init__(self, identificador_inmobiliario, área, dirección, tipo_local):
-        # Invoca al constructor de la clase padre
         super().__init__(identificador_inmobiliario, área, dirección)
         self.tipo_local = tipo_local
 
@@ -136,10 +133,9 @@ class Local(Inmueble):
         print(f"Tipo de local = {self.tipo_local}")
 
 class LocalComercial(Local):
-    valor_area = 3000000  # Valor por área de un local comercial
+    valor_area = 3000000  
 
     def __init__(self, identificador_inmobiliario, área, dirección, tipo_local, centro_comercial):
-        # Invoca al constructor de la clase padre
         super().__init__(identificador_inmobiliario, área, dirección, tipo_local)
         self.centro_comercial = centro_comercial
 
@@ -149,10 +145,9 @@ class LocalComercial(Local):
         print()
 
 class Oficina(Local):
-    valor_area = 3500000  # Valor por área de una oficina
+    valor_area = 3500000 
 
     def __init__(self, identificador_inmobiliario, área, dirección, tipo_local, es_gobierno):
-        # Invoca al constructor de la clase padre
         super().__init__(identificador_inmobiliario, área, dirección, tipo_local)
         self.es_gobierno = es_gobierno
 
@@ -174,6 +169,5 @@ class Prueba:
         aptestudio1.calcular_precio_venta(aptestudio1.valor_area)
         aptestudio1.imprimir()
 
-# Llamada al método main
 if __name__ == "__main__":
     Prueba.main()
